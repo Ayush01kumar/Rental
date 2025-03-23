@@ -1,0 +1,37 @@
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  .plan {
+    background: #264653;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .plan h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .plan p {
+    font-size: 18px;
+  }
+  
+  .plan button {
+    background-color: #e9c46a;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .plan button:hover {
+    background-color: #f4a261;
+  }
+  
