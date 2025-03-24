@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import car1 from "../assets/Car11.webp";
 import car2 from "../assets/car22.webp";
 import car3 from "../assets/car33.webp";
@@ -24,19 +25,42 @@ const Cars = () => {
   };
 
   return (
-    <section id="cars">
+    <motion.section 
+      id="cars"
+      className="cars-section"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <h2>Our Fleet</h2>
       <div className="car-grid">
         {carData.map((car, index) => (
-          <div key={index} className="car-card">
-            <img src={car.img} alt={car.name} />
+          <motion.div 
+            key={index} 
+            className="car-card"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.img 
+              src={car.img} 
+              alt={car.name} 
+              className="car-image"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            />
             <h3>{car.name}</h3>
             <p>{car.desc}</p>
-            <button onClick={() => handleRent(car.name)}>Rent Now</button>
-          </div>
+            <motion.button 
+              onClick={() => handleRent(car.name)}
+              whileHover={{ scale: 1.1, backgroundColor: "#ff9900", color: "#fff" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              Rent Now
+            </motion.button>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
